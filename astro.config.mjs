@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import netlify from "@astrojs/netlify/functions";
+import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,6 +9,6 @@ export default defineConfig({
   integrations: [mdx(), sitemap()],
   output: "hybrid",
   adapter: netlify({
-    functionPerRoute: false,
+    imageCDN: false,
   }),
 });
